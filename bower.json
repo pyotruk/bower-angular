@@ -1,6 +1,6 @@
 {
-  "name": "angular",
-  "version": "1.5.7",
+  "name": "angular-fork-pyotruk",
+  "version": "1.5.7-fork-pyotruk-1.0",
   "license": "MIT",
   "main": "./angular.js",
   "ignore": [],

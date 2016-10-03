@@ -4514,6 +4514,13 @@ function createInjector(modulesToLoad, strictDi) {
   var runBlocks = loadModules(modulesToLoad);
   instanceInjector = protoInstanceInjector.get('$injector');
   instanceInjector.strictDi = strictDi;
+
+  instanceInjector.loadNewModules = function (mods) {
+      forEach(loadModules(mods), function (fn) {
+          instanceInjector.invoke(fn || noop);
+      });
+  };
+
   forEach(runBlocks, function(fn) { if (fn) instanceInjector.invoke(fn); });
 
   return instanceInjector;
